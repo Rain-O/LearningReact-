@@ -22,8 +22,9 @@ function Tasks({ tasks, OnTaskClick, DeleteTaskClick }) {
           >
             {tasks.isCompleted && (
               <CheckSquareIcon className="w-5 h-5 min-w-[20px]" />
-            )}
-            {tasks.title}
+            )}{" "}
+            {/* ✅ TEXTO COM QUEBRA DE LINHA */}
+            <span className="break-words whitespace-normal">{tasks.title}</span>
           </button>
           <Button onClick={() => handleNavigate(tasks)}>
             <ChevronRightIcon />
