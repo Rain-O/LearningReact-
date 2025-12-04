@@ -56,7 +56,7 @@ function App() {
   }
 
   return (
-    <div className="w-screen h-screen bg-slate-500 mx-auto flex justify-center p-6">
+    <div className="min-h-screen w-full bg-slate-500 flex justify-center items-start p-4 sm:p-6">
       <div className="w-[500px] mx-auto space-y-6">
         <Title>Gerenciador de Tarefas</Title>
         <AddTask AddTaskClick={AddTaskClick} />
