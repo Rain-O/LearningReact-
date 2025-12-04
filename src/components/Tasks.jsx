@@ -19,8 +19,8 @@ function Tasks({ tasks, OnTaskClick, DeleteTaskClick }) {
         >
           <button
             onClick={() => OnTaskClick(tasks.id)}
-            className={`bg-slate-400 text-left w-full flex items-start gap-2 text-white p-2 rounded-md min-w-0 ${
-              tasks.isCompleted && "line-through bg-green-500"
+            className={`text-left w-full flex items-start gap-2 text-white p-2 rounded-md min-w-0 ${
+              tasks.isCompleted ? "line-through bg-green-400" : "bg-slate-400"
             }`}
           >
             {tasks.isCompleted && (
