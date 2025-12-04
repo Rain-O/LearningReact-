@@ -16,15 +16,15 @@ function Tasks({ tasks, OnTaskClick, DeleteTaskClick }) {
         <li key={tasks.id} className="flex gap-2">
           <button
             onClick={() => OnTaskClick(tasks.id)}
-            className={`bg-slate-400 text-left w-full flex items-center gap-2 text-white p-2 rounded-md ${
-              tasks.isCompleted && "line-through bg-green-500"
+            className={`bg-slate-400 text-left w-full flex items-center gap-2 text-white p-2 rounded-md break-words whitespace-normal ${
+              tasks.isCompleted &&
+              "line-through bg-green-500 break-words whitespace-normal"
             }`}
           >
             {tasks.isCompleted && (
               <CheckSquareIcon className="w-5 h-5 min-w-[20px]" />
-            )}{" "}
-            {/* ✅ TEXTO COM QUEBRA DE LINHA */}
-            <span className="break-words whitespace-normal">{tasks.title}</span>
+            )}
+            {tasks.title}
           </button>
           <Button onClick={() => handleNavigate(tasks)}>
             <ChevronRightIcon />
