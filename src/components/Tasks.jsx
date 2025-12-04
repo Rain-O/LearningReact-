@@ -19,19 +19,24 @@ function Tasks({ tasks, OnTaskClick, DeleteTaskClick }) {
         >
           <button
             onClick={() => OnTaskClick(tasks.id)}
-            className={`bg-slate-400 text-left w-full flex items-start gap-2 text-white p-2 rounded-md break-words whitespace-normal ${
-              tasks.isCompleted &&
-              "line-through bg-green-500 break-words whitespace-normal"
+            className={`bg-slate-400 text-left w-full flex items-start gap-2 text-white p-2 rounded-md min-w-0 ${
+              tasks.isCompleted && "line-through bg-green-500"
             }`}
           >
             {tasks.isCompleted && (
               <CheckSquareIcon className="w-5 h-5 min-w-[20px] flex-shrink-0" />
             )}
-            <span className="break-words whitespace-normal">{tasks.title}</span>
+
+            {/* ✅ AGORA O TEXTO QUEBRA DE VERDADE */}
+            <span className="break-all whitespace-normal min-w-0">
+              {tasks.title}
+            </span>
           </button>
+
           <Button onClick={() => handleNavigate(tasks)}>
             <ChevronRightIcon />
           </Button>
+
           <Button onClick={() => DeleteTaskClick(tasks.id)}>
             <DeleteIcon />
           </Button>
