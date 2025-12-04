@@ -13,18 +13,21 @@ function Tasks({ tasks, OnTaskClick, DeleteTaskClick }) {
   return (
     <ul className="space-y-4 bg-slate-200 p-6 rounded-md shadow">
       {tasks.map((tasks) => (
-        <li key={tasks.id} className="flex gap-2">
+        <li
+          key={tasks.id}
+          className="grid grid-cols-[1fr_auto_auto] gap-2 items-start"
+        >
           <button
             onClick={() => OnTaskClick(tasks.id)}
-            className={`bg-slate-400 text-left w-full flex items-center gap-2 text-white p-2 rounded-md break-words whitespace-normal ${
+            className={`bg-slate-400 text-left w-full flex items-start gap-2 text-white p-2 rounded-md break-words whitespace-normal ${
               tasks.isCompleted &&
               "line-through bg-green-500 break-words whitespace-normal"
             }`}
           >
             {tasks.isCompleted && (
-              <CheckSquareIcon className="w-5 h-5 min-w-[20px]" />
+              <CheckSquareIcon className="w-5 h-5 min-w-[20px] flex-shrink-0" />
             )}
-            {tasks.title}
+            <span className="break-words whitespace-normal">{tasks.title}</span>
           </button>
           <Button onClick={() => handleNavigate(tasks)}>
             <ChevronRightIcon />
