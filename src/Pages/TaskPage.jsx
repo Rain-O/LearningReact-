@@ -21,11 +21,11 @@ function TaskPage() {
         </div>
         <div className="bg-slate-200 p-6 rounded-md shadow flex flex-col">
           <h1>Titulo:</h1>
-          <h1 className="w-full p-2 rounded-md border border-slate-400">
+          <h1 className="w-full p-2 rounded-md border border-slate-400 break-words whitespace-normal min-w-0">
             {title}
           </h1>
           <h1>Descrição:</h1>
-          <p className="w-full p-2 rounded-md border border-slate-400">
+          <p className="w-full p-2 rounded-md border border-slate-400 break-words whitespace-normal min-w-0">
             {description}
           </p>
         </div>
